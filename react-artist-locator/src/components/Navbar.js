@@ -1,19 +1,20 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { Button } from "./Button";
+import React, { useState, useEffect } from 'react';
+import { Button } from './Button';
+import { Link } from 'react-router-dom';
 import './Navbar.css';
 
 function Navbar() {
   const [click, setClick] = useState(false);
-  const[button, setButton] = useState(true);
+  const [button, setButton] = useState(true);
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
 
   const showButton = () => {
-    if(window.innerWidth <= 960){
-    }else{
-        setButton(true);
+    if (window.innerWidth <= 960) {
+      setButton(false);
+    } else {
+      setButton(true);
     }
   };
 
@@ -25,54 +26,106 @@ function Navbar() {
 
   return (
     <>
-      <nav className="navbar">
-        <div className="navbar-container">
-          <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-            The Artist Locator <i className="fas fa-music"></i>
+      <nav className='navbar'>
+        <div className='navbar-container'>
+          <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
+          The Artist Locator <i className="fas fa-music"></i>
           </Link>
-          <div className="menu-icon" onClick={handleClick}>
-            <i className={click ? "fas fa-times" : "fas fa-bars"} />
+          <div className='menu-icon' onClick={handleClick}>
+            <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
           </div>
-          <ul className={click ? "nav-menu active" : "nav-menu"}>
-            <li className="nav-item">
-              <Link to="/" className="nav-links" onClick={closeMobileMenu}>
+          <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+            <li className='nav-item'>
+              <Link to='/' className='nav-links' onClick={closeMobileMenu}>
                 Home
               </Link>
             </li>
-            <li className="nav-item">
+            <li className='nav-item'>
               <Link
-                to="/services"
-                className="nav-links"
+                to='/services'
+                className='nav-links'
                 onClick={closeMobileMenu}
               >
                 Services
               </Link>
             </li>
-            <li className="nav-item">
+            <li className='nav-item'>
               <Link
-                to="/products"
-                className="nav-links"
+                to='/products'
+                className='nav-links'
                 onClick={closeMobileMenu}
               >
                 Products
               </Link>
             </li>
-            <li className="nav-item">
+
+            <li>
               <Link
-                to="/sign-up"
-                className="nav-links-mobile"
+                to='/sign-up'
+                className='nav-links-mobile'
                 onClick={closeMobileMenu}
               >
                 Sign Up
               </Link>
             </li>
           </ul>
-          {/* ctrl space can allow you a list to select and can immediately import */}
-          {button && <Button buttonStyle='btn-outline'>SIGN UP</Button>}
+          {button && <Button buttonStyle='btn--outline'>SIGN UP</Button>}
         </div>
       </nav>
     </>
   );
 }
+//   return (
+//     <>
+//       <nav className="navbar">
+//         <div className="navbar-container">
+//           <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
+//             The Artist Locator <i className="fas fa-music"></i>
+//           </Link>
+//           <div className="menu-icon" onClick={handleClick}>
+//             <i className={click ? "fas fa-times" : "fas fa-bars"} />
+//           </div>
+//           <ul className={click ? "nav-menu active" : "nav-menu"}>
+//             <li className="nav-item">
+//               <Link to="/" className="nav-links" onClick={closeMobileMenu}>
+//                 Home
+//               </Link>
+//             </li>
+//             <li className="nav-item">
+//               <Link
+//                 to="/services"
+//                 className="nav-links"
+//                 onClick={closeMobileMenu}
+//               >
+//                 Services
+//               </Link>
+//             </li>
+//             <li className="nav-item">
+//               <Link
+//                 to="/products"
+//                 className="nav-links"
+//                 onClick={closeMobileMenu}
+//               >
+//                 Products
+//               </Link>
+//             </li>
+
+//             <li>
+//               <Link
+//                 to="/sign-up"
+//                 className="nav-links-mobile"
+//                 onClick={closeMobileMenu}
+//               >
+//                 Sign Up
+//               </Link>
+//             </li>
+//           </ul>
+//           {/* ctrl space can allow you a list to select and can immediately import */}
+//           {button && <Button buttonStyle="btn--outline">SIGN UP</Button>}
+//         </div>
+//       </nav>
+//     </>
+//   );
+// }
 
 export default Navbar;
