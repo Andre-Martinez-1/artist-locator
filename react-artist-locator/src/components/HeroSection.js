@@ -1,11 +1,12 @@
 import React from "react";
+import '../App.css';
 import { Button } from "./Button";
 import "./HeroSection.css";
 
 function HeroSection() {
   return (
     <div className="hero-container">
-      <video src="/videos/video-2.mp4" autoPlay loop muted />
+      <video src="/videos/2019-vid.mp4" autoPlay loop muted />
       <h1>YOUR FAVORITE ARTISTS</h1>
       <p>Within the reach of your hand.</p>
       <div className="hero-btns">
@@ -21,7 +22,7 @@ function HeroSection() {
           buttonStyle="btn--primary"
           buttonSize="btn--large"
         >
-          Watch Trailer<i className="far -fa-play-circle"/>
+          Watch Trailer<i className="far fa-play-circle"/>
         </Button>
       </div>
     </div>
