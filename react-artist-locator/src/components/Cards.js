@@ -1,5 +1,6 @@
 import React from 'react'
 import CardItem from './CardItem'
+import './Cards.css'
 
 function Cards() {
   return (
@@ -7,7 +8,7 @@ function Cards() {
         <h1>Check out these AMAZING ARTISTS!</h1>
         <div className='cards_container'>
             <div className='cards_wrapper'>
-                < className='cards_items'>
+                <ul className='cards_items'>
                     <CardItem/>
                 </ul>
             </div>
